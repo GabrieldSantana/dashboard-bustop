@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌡️ Dashboard BuStop - IoT + Big Data
 
-## Getting Started
+Este projeto é uma **dashboard interativa** desenvolvida em **Next.js** para visualizar dados coletados de sensores IoT conectados a um sistema de Big Data.  
+A aplicação consome dados armazenados em um **MongoDB** via **API Node/Express**, e apresenta as leituras em tempo real em um gráfico.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Tecnologias Utilizadas
+
+- **Next.js 15** (React + TypeScript)
+- **Recharts** → para visualização de dados
+- **Axios** → para consumo da API
+- **Tailwind CSS** → para estilização moderna e responsiva
+
+---
+
+## 🧩 Estrutura do Projeto
+
+```
+dashboard/
+├── app/
+│   ├── page.tsx          # Página principal com o gráfico
+│   ├── layout.tsx        # Layout base do Next.js
+│   └── globals.css       # Estilos globais (Tailwind)
+├── public/               # Arquivos estáticos
+├── package.json
+└── README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ⚙️ Configuração e Execução
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 1️⃣ Instalar dependências
+```bash
+npm install
+```
 
-## Learn More
+### 2️⃣ Executar em modo de desenvolvimento
+```bash
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Acesse em: **[http://localhost:3000](http://localhost:3000)**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🌐 Conexão com o Backend
 
-## Deploy on Vercel
+A dashboard consome dados da API em:  
+👉 **`http://localhost:8080/api/dados`**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Certifique-se de que o backend (Node/Express ou Python/FastAPI) esteja rodando e retornando os dados no formato JSON, por exemplo:
+```json
+[
+  { "temperatura": 28.5, "timestamp": "2025-10-27T18:45:00Z" },
+  { "temperatura": 29.1, "timestamp": "2025-10-27T18:50:00Z" }
+]
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 📊 Funcionalidades
+
+- Exibição dinâmica das leituras de temperatura.
+- Atualização automática dos gráficos.
+- Interface responsiva e acessível.
+
+---
